@@ -4,7 +4,7 @@ var budget = prompt ("Ваш бюджет?");
 	shopGoodsSecond = prompt("Какой тип товаров будем продавать?");
 	shopGoodsThird = prompt("Какой тип товаров будем продавать?");
 	shopGoods = [shopGoodsFirst, shopGoodsSecond, shopGoodsThird];
-	open = "OPEN";
+	open = true;
 	budgetOnDay = budget / 30;
 	employers = {
 		sellerA: "Jo",
