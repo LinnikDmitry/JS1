@@ -1,34 +1,58 @@
-let money = prompt ("Ваш бюджет?");
-let	name = prompt ("Название вашего магазина?");
-let	time = 19;
-	/*employers = {
-		sellerA: "Jo",
-		sellerB: "John",
-		sellerC: "Johnny"
-	};*/
-  
+let money, 
+	name, 
+	time,
+	price = 20
+	
+
+function start() {
+	money = prompt ("Ваш бюджет?");
+
+	while (isNaN(money) || money == "" || money == null) {
+		money = prompt ("Ваш бюджет?");
+	}
+
+	name = prompt ("Название вашего магазина?").toUpperCase();
+	
+}
+start();
+	  
 let	mainList = {
 		budget: money,
 		nameShop: name,
 		shopGoods: [],
 		employers: {},
-		open: false
+		open: false,
+		discount: true
 	};
-  
-for (let i = 0; i < 5; i++) {
 
-	let a = prompt("Какой тип товаров будем продавать?");
-	
-	if ((typeof(a)) === 'string' && (typeof(a)) !== null && a !== '' && a.length < 50 ) {
-		console.log('Все верно!');
-		mainList.shopGoods[i] = a;
-	} else if((typeof(a)) !== null || a == ''){
-		console.log('Не верно!');
-		mainList.shopGoods[i] = prompt("Введите значение");
-
+function chooseGoods() {
+	for (let i = 0; i < 5; i++) {
+		let a = prompt("Какой тип товаров будем продавать?");	
+		if ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50 ) {
+			console.log('Все верно!');
+			mainList.shopGoods[i] = a;
+		} else {
+			i = i - 1;
+		}
 	}
+}	
+  
+chooseGoods();
 
+function hiringEmployers() {
+	for (let i = 0; i < 4; i++) {
+		let a = prompt("Имя сотрудника?");	
+		if ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50 ) {
+			console.log('Имя верно!');
+			mainList.employers[i] = i + 1 + '-' + a;
+		} else {
+			i = i - 1;
+		}
+	}
 }
+
+hiringEmployers();
+
 
 /*
 let i = 0;
@@ -62,17 +86,36 @@ do {
 
 */
 
-if (time <0) {
-	console.log('Такого просто не может быть');
-} else if (time > 0 && time < 20) {
-	console.log('Время работать!');
-	} else if (time < 24) {
-		console.log('Уже слишком поздно!');
-		} else {
-			console.log('В сутках только 24 часа!');
-		}
-	
+function workTime(time) {
+	if (time <0) {
+		console.log('Такого просто не может быть');
+	} 	else if (time > 0 && time < 20) {
+		console.log('Время работать!');
+		} 	else if (time < 24) {
+			console.log('Уже слишком поздно!');
+			} 	else {
+				console.log('В сутках только 24 часа!');
+				}
+}
 
-alert(mainList.budget / 30);
+workTime(18);
+
+function getBudget() {
+	alert(mainList.budget / 30);
+}	
+
+getBudget();
+
+function getDiscount() {
+	if (mainList.discount) {
+		let a = price * 0.8;
+		console.log(a);
+	}	else {
+		console.log(price);
+		}	
+}
+
+getDiscount();
+
 
 console.log(mainList);
