@@ -11,15 +11,15 @@ let b = a.join('');
 
 console.log(b);
 
-// let arr = [20, 33, 1, "Человек", 2, 3],
-// 	arrNew = []
-// 	for ( let i = 0; i < 6; i++) {
-// 		if (isNaN(arr)) {			
-// 			arrNew[i] = Math.pow(arr[i], 3);	
-// 		} 
-// 		if (arrNew[i] === NaN) {
-// 			arrNew[i] = 0;
-// 		}
+let arr = [20, 33, 1, "Человек", 2, 3],
+	arrNew = []
+	for ( let i = 0; i < 6; i++) {
+		if (isNaN(arr)) {			
+			arrNew[i] = Math.pow(arr[i], 3);	
+		} 
+		// if (arrNew[i] === NaN) {
+		// 	arrNew[i] = 0;
+		// }
 				
-// 	}
-// console.log(arrNew);
+	}
+console.log(arrNew);
