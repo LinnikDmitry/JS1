@@ -1,7 +1,7 @@
 let money, 
 	name, 
 	time,
-	price = 20
+	price;
 	
 
 function start() {
